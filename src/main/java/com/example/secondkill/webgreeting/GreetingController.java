@@ -1,4 +1,4 @@
-package com.example.secondkill;
+package com.example.secondkill.webgreeting;
 
 import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package com.example.secondkill;
+package com.example.secondkill.webgreeting;
 
 public class Greeting {
 
