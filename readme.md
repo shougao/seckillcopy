@@ -7,4 +7,5 @@
 添加入口http://localhost:8080/demo/add?name=zhang&email=abc@abc.com， 查询使用http://localhost:8080/demo/all
 4.封装范型Result对象结果集，使用RESTFUL风格api 返回JSON结果。
 查询使用http://localhost:8080/demo/hello, 查询使用http://localhost:8080/demo/error
+5.使用Thymeleaf分页, 查询使用 http://localhost:8080/thymeleafdemo/greeting?name=zhangsan
 ```
