@@ -8,4 +8,7 @@
 4.封装范型Result对象结果集，使用RESTFUL风格api 返回JSON结果。
 查询使用http://localhost:8080/demo/hello, 查询使用http://localhost:8080/demo/error
 5.使用Thymeleaf分页, 查询使用 http://localhost:8080/thymeleafdemo/greeting?name=zhangsan
+6. 使用mybatis和durid 数据连接池，倒入数据，INSERT INTO `miaosha`.`miaoshaUser` (`id`, `name`) VALUES (2, 'zhang')
+使用注解@Select 的方式，查询使用mybatis，验证：http://localhost:8080/dbdemo/db/get， 
+使用xxxMapper.xml 的方式查询， 验证：http://localhost:8080/dbdemo/db/getall
 ```
