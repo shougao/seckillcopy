@@ -11,4 +11,6 @@
 6. 使用mybatis和durid 数据连接池，倒入数据，INSERT INTO `miaosha`.`miaoshaUser` (`id`, `name`) VALUES (2, 'zhang')
 使用注解@Select 的方式，查询使用mybatis，验证：http://localhost:8080/dbdemo/db/get， 
 使用xxxMapper.xml 的方式查询， 验证：http://localhost:8080/dbdemo/db/getall
+7. 支持事物功能, 使用@Transactional 注解 让mybatis实现的dao具有事务能力。 验证:  http://localhost:8080/dbdemo/db/tx, 
+得到java.sql.SQLIntegrityConstraintViolationException 500 
 ```

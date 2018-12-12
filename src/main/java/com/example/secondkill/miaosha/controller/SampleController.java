@@ -22,6 +22,13 @@ public class SampleController {
         return Result.success(miaoshaUser);
     }
 
+    @RequestMapping("/db/tx")
+    @ResponseBody
+    public Result<Boolean> tx(){
+        userService.tx();
+        return Result.success(true);
+    }
+
 
     @RequestMapping("/db/getall")
     @ResponseBody
