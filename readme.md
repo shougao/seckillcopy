@@ -13,4 +13,6 @@
 使用xxxMapper.xml 的方式查询， 验证：http://localhost:8080/dbdemo/db/getall
 7. 支持事物功能, 使用@Transactional 注解 让mybatis实现的dao具有事务能力。 验证:  http://localhost:8080/dbdemo/db/tx, 
 得到java.sql.SQLIntegrityConstraintViolationException 500 
+8. 集成redis：使用redis配置生成，redis资源池并获取redis对象，使用对象set、get功能，对存储的string进行java对象的类型转化并支持范型类型。
+验证：启动redis, redis-server redis.conf, http://localhost:8080/dbdemo/redis/set， http://localhost:8080/dbdemo/redis/get
 ```

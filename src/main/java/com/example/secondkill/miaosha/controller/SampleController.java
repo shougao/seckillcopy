@@ -1,6 +1,7 @@
 package com.example.secondkill.miaosha.controller;
 
 import com.example.secondkill.miaosha.domain.MiaoshaUser;
+import com.example.secondkill.miaosha.redis.RedisService;
 import com.example.secondkill.miaosha.result.Result;
 import com.example.secondkill.miaosha.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +16,19 @@ public class SampleController {
     @Autowired
     UserService userService;
 
+    @Autowired
+    RedisService redisService;
+
     @RequestMapping("/db/get")
     @ResponseBody
-    public Result<MiaoshaUser> dbGet(){
+    public Result<MiaoshaUser> dbGet() {
         MiaoshaUser miaoshaUser = userService.getById(0);
         return Result.success(miaoshaUser);
     }
 
     @RequestMapping("/db/tx")
     @ResponseBody
-    public Result<Boolean> tx(){
+    public Result<Boolean> tx() {
         userService.tx();
         return Result.success(true);
     }
@@ -32,9 +36,24 @@ public class SampleController {
 
     @RequestMapping("/db/getall")
     @ResponseBody
-    public Result<MiaoshaUser> dbGetAll(){
+    public Result<MiaoshaUser> dbGetAll() {
         MiaoshaUser miaoshaUser = userService.getUsers();
         return Result.success(miaoshaUser);
     }
+
+    @RequestMapping("/redis/set")
+    @ResponseBody
+    public Result<Boolean> redisSet() {
+        redisService.set("key1", 12345678);
+        return Result.success(true);
+    }
+
+    @RequestMapping("/redis/get")
+    @ResponseBody
+    public Result<Long> redisGet() {
+        Long v1 = redisService.get("key1", Long.class);
+        return Result.success(v1);
+    }
+
 
 }
