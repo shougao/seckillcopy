@@ -15,4 +15,5 @@
 得到java.sql.SQLIntegrityConstraintViolationException 500 
 8. 集成redis：使用redis配置生成，redis资源池并获取redis对象，使用对象set、get功能，对存储的string进行java对象的类型转化并支持范型类型。
 验证：启动redis, redis-server redis.conf, http://localhost:8080/dbdemo/redis/set， http://localhost:8080/dbdemo/redis/get
+9. 添加用于各个模块区分的prefix，启动redis后，测试接口  http://localhost:8080/dbdemo/redis/set, http://localhost:8080/dbdemo/redis/get
 ```

@@ -2,6 +2,7 @@ package com.example.secondkill.miaosha.controller;
 
 import com.example.secondkill.miaosha.domain.MiaoshaUser;
 import com.example.secondkill.miaosha.redis.RedisService;
+import com.example.secondkill.miaosha.redis.UserKey;
 import com.example.secondkill.miaosha.result.Result;
 import com.example.secondkill.miaosha.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,15 +45,18 @@ public class SampleController {
     @RequestMapping("/redis/set")
     @ResponseBody
     public Result<Boolean> redisSet() {
-        redisService.set("key1", 12345678);
+        MiaoshaUser user = new MiaoshaUser();
+        user.setId(1);
+        user.setName("name1");
+        redisService.set(UserKey.getById, "" + 1, user);
         return Result.success(true);
     }
 
     @RequestMapping("/redis/get")
     @ResponseBody
-    public Result<Long> redisGet() {
-        Long v1 = redisService.get("key1", Long.class);
-        return Result.success(v1);
+    public Result<MiaoshaUser> redisGet() {
+        MiaoshaUser user = redisService.get(UserKey.getById, "" + 1, MiaoshaUser.class);
+        return Result.success(user);
     }
 
 
